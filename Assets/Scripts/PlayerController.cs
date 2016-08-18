@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour {
 		if (col.gameObject.tag == "enemy") {
 			Destroy (this.gameObject);
 			gc.GoToMainMenu ();
+			gc.isPlayerDead = true;
 		}
 	}
 }
