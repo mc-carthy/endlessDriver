@@ -18,7 +18,7 @@ public class EnemyCarSpawner : MonoBehaviour {
 
 		if (timer < 0) {
 			Vector3 spawnPos = new Vector3 (Random.Range (-xSpawnLimit, xSpawnLimit), transform.position.y, transform.position.z);
-			GameObject newCar = Instantiate(cars[Random.Range(0, cars.Length - 1)], spawnPos, Quaternion.identity) as GameObject;
+			GameObject newCar = Instantiate(cars[Random.Range(0, cars.Length)], spawnPos, Quaternion.identity) as GameObject;
 			timer = spawnRate;
 			newCar.transform.SetParent (this.transform);
 		}

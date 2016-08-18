@@ -17,4 +17,10 @@ public class PlayerController : MonoBehaviour {
 		pos.x = Mathf.Clamp (pos.x, -xClamp, xClamp);
 		transform.position = pos;
 	}
+
+	private void OnTriggerEnter2D (Collider2D col) {
+		if (col.gameObject.tag == "enemy") {
+			Destroy (this.gameObject);
+		}
+	}
 }
