@@ -7,9 +7,11 @@ public class PlayerController : MonoBehaviour {
 
 	private Vector2 pos;
 	private float xClamp = 2.2f;
+	private GameController gc;
 
 	private void Start () {
 		pos = transform.position;
+		gc = FindObjectOfType<GameController> ();
 	}
 
 	private void Update () {
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour {
 	private void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.tag == "enemy") {
 			Destroy (this.gameObject);
+			gc.GoToMainMenu ();
 		}
 	}
 }
